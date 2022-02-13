@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+/* width */
+header.left-header-style::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+header.left-header-style::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+header.left-header-style::-webkit-scrollbar-thumb {
+  background: #17191c; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+header.left-header-style::-webkit-scrollbar-thumb:hover {
+  background: #000000; 
+}
