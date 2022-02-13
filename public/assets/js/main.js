@@ -18,40 +18,32 @@
             imJs.featherAtcivation();
             imJs.backToTopInit();
             imJs.mobileMenuActive();
-            imJs.vedioActivation();
             imJs.stickyHeader();
-            imJs.smothScroll();
             imJs.smothScroll_Two();
             imJs.stickyAdjust();
-            imJs.testimonialActivation();
             imJs.contactForm();
             imJs.wowActive();
             imJs.awsActivation();
-            imJs.demoActive();
-            imJs.activePopupDemo();
-            
+            imJs.modalActivation();
+            imJs.themeChanger();
         },
 
-        
-        activePopupDemo: function (e) {
-            $('.popuptab-area li a.demo-dark').on('click', function (e) {
-                $('.demo-modal-area').addClass('dark-version');
-                $('.demo-modal-area').removeClass('white-version');
+
+        themeChanger: function () {
+            $(document).on('change', '.theme-changer .switch input[type="checkbox"]', function (e) {
+                if($(this).is(':checked')){
+                    $('body').removeClass('white-version')
+                    $(this).attr('checked', 'false')
+                }else{
+                    $('body').addClass('white-version')
+                }
             });
-
-            $('.popuptab-area li a.demo-light').on('click', function (e) {
-                $('.demo-modal-area').removeClass('dark-version');
-                $('.demo-modal-area').addClass('white-version');
-            })
         },
 
-        demoActive: function (e) {
-            $('.rn-right-demo').on('click', function (e) {
-                $('.demo-modal-area').addClass('open');
-            })
-            $('.demo-close-btn').on('click', function (e) {
-                $('.demo-modal-area').removeClass('open');
-            })
+        modalActivation: function () {
+            $(document).on('click', '.rn-portfolio a', function (e) {
+                e.preventDefault();
+            });
         },
 
         contactForm: function () {
@@ -94,14 +86,6 @@
             new WOW().init();
         },
 
-        smothScroll: function () {
-            $(document).on('click', '.smoth-animation', function (event) {
-                event.preventDefault();
-                $('html, body').animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top - 50
-                }, 300);
-            });
-        },
         // two scroll spy
         smothScroll_Two: function () {
             $(document).on('click', '.smoth-animation-two', function (event) {
@@ -125,184 +109,6 @@
             $('.rbt-sticky-top-adjust-three').css({
                 top: 25
             });
-        },
-
-        testimonialActivation: function () {
-            $('.testimonial-activation').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-                arrows: true,
-                adaptiveHeight: true,
-                cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-arrow-right"></i></button>'
-            });
-
-            $('.testimonial-item-one').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-                arrows: true,
-                adaptiveHeight: true,
-                cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-chevron-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-chevron-right"></i></button>',
-                responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        arrows: false,
-                    }
-                }]
-            });
-
-
-            $('.portfolio-slick-activation').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                dots: false,
-                arrows: true,
-                cssEase: 'linear',
-                adaptiveHeight: true,
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-arrow-right"></i></button>',
-                responsive: [{
-                        breakpoint: 1124,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 868,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: true,
-                            arrows: false,
-                        }
-                    }
-                ]
-            });
-
-
-            $('.blog-slick-activation').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                dots: false,
-                arrows: true,
-                cssEase: 'linear',
-                adaptiveHeight: true,
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-arrow-right"></i></button>',
-                responsive: [{
-                        breakpoint: 1124,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 868,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: true,
-                            arrows: false,
-                        }
-                    }
-                ]
-            });
-
-            $('.testimonial-activation-item-3').slick({
-                arrows: true,
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                adaptiveHeight: true,
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-chevron-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-chevron-right"></i></button>',
-                responsive: [{
-                        breakpoint: 1124,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            arrows: false,
-                        }
-                    },
-                    {
-                        breakpoint: 577,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            arrows: false,
-                        }
-                    }
-                ]
-            });
-
-            $('.brand-activation-item-5').slick({
-                arrows: true,
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                adaptiveHeight: true,
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-chevron-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-chevron-right"></i></button>',
-                responsive: [{
-                        breakpoint: 1124,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 868,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-
         },
 
         featherAtcivation: function () {
@@ -344,29 +150,6 @@
                     $('.header--sticky').removeClass('sticky')
                 }
             })
-        },
-
-        vedioActivation: function (e) {
-            $('#play-video').on('click', function (e) {
-                e.preventDefault();
-                $('#video-overlay').addClass('open');
-                $("#video-overlay").append('<iframe width="80%" height="80%" src="https://www.youtube.com/embed/7e90gBu4pas" frameborder="0" allowfullscreen></iframe>');
-            });
-
-            $('.video-overlay, .video-overlay-close').on('click', function (e) {
-                e.preventDefault();
-                close_video();
-            });
-
-            $(document).keyup(function (e) {
-                if (e.keyCode === 27) {
-                    close_video();
-                }
-            });
-
-            function close_video() {
-                $('.video-overlay.open').removeClass('open').find('iframe').remove();
-            };
         },
 
         mobileMenuActive: function (e) {

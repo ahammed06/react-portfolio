@@ -43,7 +43,7 @@ export default function Contact() {
                             <div className="contact-form-wrapper">
                                 <div className="introduce">
 
-                                    <form className="rnt-contact-form rwt-dynamic-form row" id="contact-form" method="POST" action="https://rainbowit.net/html/inbio/mail.php">
+                                    <form className="rnt-contact-form rwt-dynamic-form row" id="contact-form" method="POST">
 
                                         <div className="col-lg-6">
                                             <div className="form-group">

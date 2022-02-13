@@ -10,7 +10,7 @@ export default function Footer() {
                             <div className="footer-area text-center">
 
                                 <div className="logo">
-                                    <a href="index.html">
+                                    <a href="#">
                                         <img src="assets/images/logo/logo-vertical.png" alt="logo" />
                                     </a>
                                 </div>

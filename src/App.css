@@ -58,3 +58,96 @@ header.left-header-style::-webkit-scrollbar-thumb {
 header.left-header-style::-webkit-scrollbar-thumb:hover {
   background: #000000; 
 }
+
+
+.theme-changer {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.theme-changer .switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+}
+
+.theme-changer .switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-changer .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.theme-changer .slider:before {
+  position: absolute;
+  content: "";
+  height: 42px;
+  width: 42px;
+  left: 7px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.theme-changer input:checked + .slider {
+  background-color: #ff014f;
+}
+
+.theme-changer input:focus + .slider {
+  box-shadow: 0 0 1px #7c0025;
+}
+
+.theme-changer input:checked + .slider:before {
+  -webkit-transform: translateX(45px);
+  -ms-transform: translateX(45px);
+  transform: translateX(45px);
+  background: #212428;
+}
+
+/* Rounded sliders */
+.theme-changer .slider.round {
+  border-radius: 34px;
+}
+
+.theme-changer .slider.round:before {
+  border-radius: 50%;
+}
+
+.theme-changer .feather.csun{
+  color: black;
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.theme-changer .feather.cmoon{
+  color: black;
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.theme-changer input:not(:checked) + .slider .feather.csun {
+  color: #ff014f;
+}
+
+.theme-changer input:checked + .slider .feather.cmoon {
+  color: white;
+}

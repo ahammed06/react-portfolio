@@ -9,11 +9,10 @@ import BackToTop from './Components/BackToTop';
 
 import Home from './Components/Sections/Home';
 import Service from './Components/Sections/Service';
+import Skill from './Components/Sections/Skill';
 import Portfolio from './Components/Sections/Portfolio';
 import Resume from './Components/Sections/Resume';
 import Client from './Components/Sections/Client';
-import Pricing from './Components/Sections/Pricing';
-import News from './Components/Sections/News';
 import Contact from './Components/Sections/Contact';
 
 function App() {
@@ -27,6 +26,10 @@ function App() {
         {/* start slider area */}
         <Home />
         {/* start slider area End */}
+
+        {/* skill area Start */}
+        <Skill />
+        {/* skill area End */}
 
         {/* Start Service Area */}
         <Service />
@@ -43,14 +46,6 @@ function App() {
         {/* Start Client Area */}
         <Client />
         {/* End client section */}
-
-        {/* Pricing Area */}
-        <Pricing />
-        {/* pricing area */}
-
-        {/* Start News Area */}
-        <News />
-        {/* ENd Mews Area */}
 
         {/* Start Contact section */}
         <Contact />
