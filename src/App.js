@@ -14,10 +14,15 @@ import Portfolio from './Components/Sections/Portfolio';
 import Resume from './Components/Sections/Resume';
 import Client from './Components/Sections/Client';
 import Contact from './Components/Sections/Contact';
+import Preloader from './Components/Preloader';
 
 function App() {
   return (
     <>
+      {/* Start Preloader Area */}
+      <Preloader />
+      {/* End Preloader Area */}
+
       {/* Start Header Area */}
       <Header />
       {/* End Header Area */}

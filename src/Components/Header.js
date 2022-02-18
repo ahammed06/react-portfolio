@@ -25,7 +25,7 @@ export default function Header() {
                     <div className="footer">
                         <div className="social-share-style-1 mt--40">
                             <span className="title">find with me</span>
-                            <ul className="social-share d-flex liststyle">
+                            <ul className="social-share-icons d-flex liststyle">
                                 <li className="facebook"><a href="#"><i data-feather="facebook"></i></a></li>
                                 <li className="instagram"><a href="#"><i data-feather="instagram"></i></a></li>
                                 <li className="linkedin"><a href="#"><i data-feather="linkedin"></i></a></li>

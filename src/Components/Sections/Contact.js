@@ -32,9 +32,9 @@ export default function Contact() {
                                 <div className="social-area">
                                     <div className="name">FIND WITH ME</div>
                                     <div className="social-icone">
-                                        <a href="#"><i data-feather="facebook"></i></a>
-                                        <a href="#"><i data-feather="linkedin"></i></a>
-                                        <a href="#"><i data-feather="instagram"></i></a>
+                                        <a href="#facebook"><i data-feather="facebook"></i></a>
+                                        <a href="#linkedin"><i data-feather="linkedin"></i></a>
+                                        <a href="#instagram"><i data-feather="instagram"></i></a>
                                     </div>
                                 </div>
                             </div>

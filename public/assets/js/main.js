@@ -31,12 +31,19 @@
 
         themeChanger: function () {
             $(document).on('change', '.theme-changer .switch input[type="checkbox"]', function (e) {
+                $('body').prepend('<div id="preloader"><div class="loader_line"></div></div>')
                 if($(this).is(':checked')){
                     $('body').removeClass('white-version')
                     $(this).attr('checked', 'false')
                 }else{
                     $('body').addClass('white-version')
                 }
+                setTimeout(function(){
+                    document.getElementById("preloader").classList.add('preloaded');
+                    setTimeout(function(){
+                        document.getElementById("preloader").remove()
+                    }, 1000);
+                }, 1000);
             });
         },
 
@@ -204,6 +211,23 @@
 
     }
     imJs.m();
+
+
+    var NAY = {};
+    /* ---------------------------------------------- /*
+     * Pre load
+    /* ---------------------------------------------- */
+    NAY.PreLoad = function() {
+        document.getElementById("preloader").classList.add('preloaded');
+        setTimeout(function(){
+            document.getElementById("preloader").remove()
+        }, 1000);
+    }
+
+    // Window on Load
+    $(window).on("load", function() {
+        NAY.PreLoad();
+    });
 
 
 })(jQuery, window)

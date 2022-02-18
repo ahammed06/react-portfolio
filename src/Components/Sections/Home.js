@@ -40,9 +40,9 @@ export default function Home() {
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
-                                        <div className="social-share-inner-left">
+                                        <div className="social-share-icon-home social-share-inner-left">
                                             <span className="title">find with me</span>
-                                            <ul className="social-share d-flex liststyle">
+                                            <ul className="social-share-icons d-flex liststyle">
                                                 <li className="facebook"><a href="#"><i data-feather="facebook"></i></a></li>
                                                 <li className="instagram"><a href="#"><i data-feather="instagram"></i></a></li>
                                                 <li className="linkedin"><a href="#"><i data-feather="linkedin"></i></a></li>
