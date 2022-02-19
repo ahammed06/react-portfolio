@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www.react.sabbirahammed.epizy.com$
+RewriteRule ^(.*)$ https://www.react.sabbirahammed.epizy.com/$1 [R=301,L]
+
+#RewriteRule ^(AdminBBeats|ConTrolsBeats|english|archives|phpmyadmin|videogallery)($|/) - [L]

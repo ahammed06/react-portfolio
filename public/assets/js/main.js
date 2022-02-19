@@ -31,18 +31,25 @@
 
         themeChanger: function () {
             $(document).on('change', '.theme-changer .switch input[type="checkbox"]', function (e) {
-                $('body').prepend('<div id="preloader"><div class="loader_line"></div></div>')
-                if($(this).is(':checked')){
-                    $('body').removeClass('white-version')
-                    $(this).attr('checked', 'false')
-                }else{
-                    $('body').addClass('white-version')
-                }
+                // $('body').prepend('<div id="preloader"><div class="loader_line"></div></div>')
+                document.getElementById("preloader").classList.remove('preloaded');
+                document.getElementById("preloader").style.zIndex = "";
+                var that = $(this)
                 setTimeout(function(){
-                    document.getElementById("preloader").classList.add('preloaded');
+                    document.getElementById("preloader").classList.remove('loaded');
+                    if(that.is(':checked')){
+                        $('body').removeClass('white-version')
+                        that.attr('checked', 'false')
+                    }else{
+                        $('body').addClass('white-version')
+                    }
                     setTimeout(function(){
-                        document.getElementById("preloader").remove()
-                    }, 1000);
+                        document.getElementById("preloader").classList.add('preloaded');
+                        setTimeout(function(){
+                            document.getElementById("preloader").classList.add('loaded');
+                            document.getElementById("preloader").style.zIndex = "1";
+                        }, 1000);
+                    }, 500);
                 }, 1000);
             });
         },
@@ -220,7 +227,8 @@
     NAY.PreLoad = function() {
         document.getElementById("preloader").classList.add('preloaded');
         setTimeout(function(){
-            document.getElementById("preloader").remove()
+            document.getElementById("preloader").classList.add('loaded');
+            document.getElementById("preloader").style.zIndex = "1";
         }, 1000);
     }
 

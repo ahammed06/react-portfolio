@@ -201,7 +201,7 @@ body.white-version::-webkit-scrollbar-thumb {
   display: flex;
 }
 
-body #preloader:before, body #preloader:after {
+body.white-version #preloader:before, body.white-version #preloader:after {
   content: '';
   position: absolute;
   left: 0;
@@ -214,7 +214,7 @@ body #preloader:before, body #preloader:after {
   -o-transition: all .3s ease 0s;
   transition: all .3s ease 0s;
 }
-body.white-version #preloader:before, body.white-version #preloader:after {
+body #preloader:before, body #preloader:after {
   content: '';
   position: absolute;
   left: 0;
@@ -226,6 +226,9 @@ body.white-version #preloader:before, body.white-version #preloader:after {
   -webkit-transition: all .3s ease 0s;
   -o-transition: all .3s ease 0s;
   transition: all .3s ease 0s;
+}
+body #preloader.loaded:before, body #preloader.loaded:after {
+  width: 0%;
 }
 body #preloader:after {
   left: auto;
@@ -245,7 +248,7 @@ body.white-version #preloader:after {
   -o-transition: all .8s ease 0s;
   transition: all .8s ease 0s;
 }
-body .loader_line:before {
+body.white-version .loader_line:before {
   content: '';
   position: absolute;
   left: 0;
@@ -261,7 +264,7 @@ body .loader_line:before {
   -o-animation: lineheight 1000ms ease-in-out 0s forwards;
   animation: lineheight 1000ms ease-in-out 0s forwards;
 }
-body.white-version .loader_line:before {
+body .loader_line:before {
   content: '';
   position: absolute;
   left: 0;
@@ -277,7 +280,7 @@ body.white-version .loader_line:before {
   -o-animation: lineheight 1000ms ease-in-out 0s forwards;
   animation: lineheight 1000ms ease-in-out 0s forwards;
 }
-body .loader_line:after {
+body.white-version .loader_line:after {
   content: '';
   position: absolute;
   left: 0;
@@ -294,7 +297,7 @@ body .loader_line:after {
   animation: lineround 1200ms linear 0s infinite;
   animation-delay: 2000ms;
 }
-body.white-version .loader_line:after {
+body .loader_line:after {
   content: '';
   position: absolute;
   left: 0;
@@ -342,6 +345,22 @@ body.white-version .loader_line:after {
 .preloaded .loader_line {
 	opacity: 0;
 	height: 100%!important
+}
+
+#preloader:not(.preloaded):before,
+#preloader:not(.preloaded):after {
+	-webkit-animation: preloadershow 300ms ease-in-out 500ms forwards;
+	-o-animation: preloadershow 300ms ease-in-out 500ms forwards;
+	animation: preloadershow 300ms ease-in-out 500ms forwards
+}
+
+@keyframes preloadershow {
+	0% {
+		width: 0%
+	}
+	100% {
+		width: 50%
+	}
 }
 
 .preloaded:before,
